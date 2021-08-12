@@ -5,3 +5,5 @@ composer.phar
 /package-lock.json
 /node_modules
 /bower_modules
+.idea/*/
+.ddev/*
