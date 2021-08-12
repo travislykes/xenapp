@@ -12,7 +12,8 @@
   ],
   "require": {
     "php": ">=7.4",
-    "steampixel/simple-php-router": "^0.7.0"
+    "steampixel/simple-php-router": "^0.7.0",
+    "jenssegers/blade": "^1.4"
   },
   "require-dev": {
     "phpunit/phpunit": "^5.0"
