@@ -16,9 +16,9 @@
                 @endphp
                 <form action="/register" method="post">
                     <label for="name">Title:</label>
-                    <input type="text" id="name" name="name" required><br><br>
+                    <input type="text" id="name" name="title" required><br><br>
                     <label for="body">Body:</label>
-                    <textarea type="text" name="body" id="editor" rows="10" cols="80">
+                    <textarea type="text" name="body" id="body" rows="10" cols="80">
                     </textarea><br><br>
                     <label for="image">Image:</label>
                     <input type="file" id="image" name="image"><br><br>

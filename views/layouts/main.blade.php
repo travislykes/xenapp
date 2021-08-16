@@ -48,7 +48,7 @@
     <!--     google font-->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i,700,700i,900,900i&display=swap" rel="stylesheet">
-
+    <script src="//cdn.ckeditor.com/4.5.5/standard/ckeditor.js"></script>
 </head>
 <body class="karma home home-1 karma-home karma-home-2">
 <!-- .site-wrapper -->
@@ -78,24 +78,7 @@
 
 <!-- Theme Custom Scripts -->
 <script>
-    $('.js-search-dropdown-toggle').on('click', function () {
-        $('.mnmd-search-full').toggleClass('On');
-    });
-    $('#mnmd-search-remove').on('click', function () {
-        $('.mnmd-search-full').removeClass('On');
-    });
-
-
-
-    $('.karma-grid').masonry({
-        // set itemSelector so .grid-sizer is not used in layout
-        itemSelector: '.grid-item',
-        columnWidth: 1,
-        // gutter: 70,
-        // percentPosition: true,
-        isAnimated: true,
-        isFitWidth: true,
-    })
+    CKEDITOR.replace( 'body' );
 </script>
 </body>
 </html>
