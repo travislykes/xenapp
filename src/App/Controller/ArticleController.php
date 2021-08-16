@@ -13,8 +13,8 @@ class ArticleController
         $view = View::GetView();
         $article = new Article($conn);
         $details = $article->getArticle($slug);
-//var_dump($details);
-        return $view->make('article', ['details' => $details])->render();
+
+        return $view->make('article', ['article' => $details])->render();
     }
 
     public function create()
@@ -40,16 +40,35 @@ class ArticleController
 
     }
 
-    public function edit($slug = null)
+    public function edit($slug)
     {
+        global $conn;
+        $article = new Article($conn);
+        $details = $article->getArticle($slug);
         $view = View::GetView();
 
-        return $view->make('admin.edit-article', ['slug'=> $slug])->render();
+        return $view->make('admin.edit-article', ['article'=> $details])->render();
     }
 
-    public function update()
+    public function update($slug)
     {
 
+        global $conn;
+        $article = new Article($conn);
+        $title = $this->test_input($_POST['title']);
+        $body = $_POST['body'];
+
+        if (!empty($_FILES['image']['name']))
+        {
+            $image = $article->processImage($_FILES['image']);
+        }
+        else {
+            $image = $_POST['old_image'];
+        }
+        $user_id  = $_SESSION['id'];
+        $article->updateArticle($title, $body, $slug, $image, $user_id);
+
+        return header('Location: /');
     }
 
     private function test_input($data)

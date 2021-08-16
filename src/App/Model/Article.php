@@ -14,14 +14,14 @@ class Article
 
     public function getArticle($slug)
     {
-        $query = $this->db->prepare("SELECT id FROM `articles` WHERE `slug`= ?");
+        $query = $this->db->prepare("SELECT * FROM `articles` WHERE `slug`= ?");
         $query->bindValue(1, $slug);
 
         try {
 
             $query->execute();
 
-            return $query->fetchColumn();
+            return $query->fetch();
 
         } catch (PDOException $e) {
 
@@ -57,6 +57,26 @@ class Article
         $query->bindValue(4, $image);
         $query->bindValue(5, $user_id);
         $query->bindValue(6, $created_at);
+
+        try {
+            $query->execute();
+        } catch (PDOException $e) {
+            die($e->getMessage());
+        }
+
+    }
+
+    public function updateArticle($title, $body, $slug, $image, $user_id)
+    {
+        $updated_at = date("Y-m-d H:i:s");
+        $query = $this->db->prepare("UPDATE `articles` SET `title` = ?, `body` =?,`images` =?, `user_id` =?,`updated_at` =? WHERE `slug` = ?");
+
+        $query->bindValue(1, $title);
+        $query->bindValue(2, $body);
+        $query->bindValue(3, $image);
+        $query->bindValue(4, $user_id);
+        $query->bindValue(5, $updated_at);
+        $query->bindValue(6, $slug);
 
         try {
             $query->execute();

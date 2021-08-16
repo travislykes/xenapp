@@ -26,7 +26,7 @@
                                     <div class="post__excerpt">{!!substr($article['body'], 0, 50) !!}..
                                     </div>
                                     @if(!empty($_SESSION['id']) && $article['user_id'] == $_SESSION['id'])
-                                    <a class="button" href="#">Edit</a>
+                                    <a class="button" href="/edit-{{$article['slug']}}">Edit</a>
                                     @endif
                                 </div>
                             </article>

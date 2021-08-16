@@ -33,6 +33,14 @@ Route::add('/logout', function (){
     return $route->logout();
 });
 
+//App route
+Route::add('/', function() {
+    $route = new HomeController();
+    return $route->index();
+});
+
+//Article Routes
+
 Route::add('/create-article', function (){
     $route = new ArticleController();
     return $route->create();
@@ -43,12 +51,16 @@ Route::add('/article-save', function() {
     return $route->store();
 }, 'post');
 
-Route::add('/', function() {
-    $route = new HomeController();
-    return $route->index();
+Route::add('/edit-([a-z-0-9-]*)', function ($slug){
+    $route = new ArticleController();
+    return $route->edit($slug);
 });
 
-//Article Routes
+Route::add('/update/([a-z-0-9-]*)', function($slug) {
+    $route = new ArticleController();
+    return $route->update($slug);
+}, 'post');
+
 Route::add('/([a-z-0-9-]*)', function ($slug){
     $route = new ArticleController();
     return $route->show($slug);

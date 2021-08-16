@@ -4,7 +4,7 @@
         <div class="mobile-header__inner mobile-header__inner--flex">
             <div class="header-branding header-branding--mobile mobile-header__section text-left">
                 <div class="header-logo header-logo--mobile flexbox__item text-left">
-                    <a href="index.html">
+                    <a href="/">
                         <img src="images/Logo.png" alt="logo">
                     </a>
                 </div>
@@ -31,7 +31,7 @@
                     <a href="#mnmd-offcanvas-primary" class="offcanvas-menu-toggle navigation-bar-btn js-mnmd-offcanvas-toggle hidden-lg hidden-md hidden-sm hidden-xs">
                         <i class="mdicon mdicon-menu"></i>
                     </a>
-                    <a href="./index.html">
+                    <a href="./">
                         <img src="images/Logo.png" alt="logo">
                     </a>
                 </div>

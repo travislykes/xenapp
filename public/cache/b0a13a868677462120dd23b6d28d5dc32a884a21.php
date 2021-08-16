@@ -24,7 +24,7 @@
                                     <div class="post__excerpt"><?php echo substr($article['body'], 0, 50); ?>..
                                     </div>
                                     <?php if(!empty($_SESSION['id']) && $article['user_id'] == $_SESSION['id']): ?>
-                                    <a class="button" href="#">Edit</a>
+                                    <a class="button" href="/edit-<?php echo e($article['slug']); ?>">Edit</a>
                                     <?php endif; ?>
                                 </div>
                             </article>
