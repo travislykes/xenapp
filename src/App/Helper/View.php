@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Helper;
 
 use Jenssegers\Blade\Blade;

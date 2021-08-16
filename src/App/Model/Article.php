@@ -116,7 +116,6 @@ class Article
 
     public function processImage($image)
     {
-        var_dump($image);
         if (isset($image))
         {
             $errors= array();
