@@ -18,7 +18,18 @@ Route::add('/login-auth', function() {
     return $route->login();
 }, 'post');
 
+Route::add('/front-register', function() {
+    $route = new AuthController();
+    return $route->showRegister();
+});
 
+Route::add('/register', function() {
+    $route = new AuthController();
+    return $route->register();
+}, 'post');
+
+
+//Articles
 Route::add('/', function() {
     $route = new HomeController();
     return $route->index();
