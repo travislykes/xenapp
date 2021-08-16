@@ -4,6 +4,12 @@ namespace App\Model;
 
 class Article
 {
+    private $db;
+
+    public function __construct($database)
+    {
+        $this->db = $database;
+    }
     /**
      * Primary key of entity
      */
@@ -63,5 +69,40 @@ class Article
     public function SetTitle($value)
     {
         $this->get(self::FIELD_TITLE)->value = $value;
+    }
+
+    public function getArticle($slug)
+    {
+
+        $query = $this->db->prepare("SELECT * FROM `articles` WHERE `slug`= ?");
+        $query->bindValue(1, $slug);
+
+        try {
+
+            $query->execute();
+
+            return $query->fetch();
+
+        } catch (PDOException $e) {
+
+            die($e->getMessage());
+        }
+    }
+
+    public function getAll()
+    {
+
+        $query = $this->db->prepare("SELECT * FROM  `articles`");
+
+        try {
+
+            $query->execute();
+
+            return $query->fetchAll();
+
+        } catch (PDOException $e) {
+
+            die($e->getMessage());
+        }
     }
 }

@@ -1,17 +1,32 @@
 <?php
 
 use App\Controller\AdminController;
+use App\Controller\ArticleController;
+use App\Controller\AuthController;
 use App\Controller\HomeController;
 use Steampixel\Route;
 
-// Add your first route
+
+//Auth routes
+Route::add('/login', function() {
+    $route = new AuthController();
+    return $route->showLogin();
+});
+
+Route::add('/login-auth', function() {
+    $route = new AuthController();
+    return $route->login();
+}, 'post');
+
+
 Route::add('/', function() {
-    echo 'Welcome :-)';
+    $route = new HomeController();
+    return $route->index();
 });
 
 Route::add('/show', function (){
-    $route = new HomeController();
-    return $route->index();
+    $route = new ArticleController();
+    return $route->show();
 });
 
 Route::add('/admin', function (){

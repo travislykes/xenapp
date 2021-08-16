@@ -7,3 +7,4 @@ composer.phar
 /bower_modules
 .idea/*/
 .ddev/*
+public/cache

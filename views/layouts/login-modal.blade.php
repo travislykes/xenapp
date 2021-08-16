@@ -1,6 +1,3 @@
-@extends('layouts.main')
-
-@section('content')
 <div class="modal fade login-modal" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="login-modal-label">
     <div class="modal-dialog" role="document">
         <div class="modal-content login-signup-form">
@@ -67,8 +64,7 @@
             </div>
         </div>
     </div>
-</div>
-<!-- Login modal -->
+</div><!-- Login modal -->
 
 
 <a href="#" class="mnmd-go-top btn btn-default hidden-xs js-go-top-el"><i class="mdicon mdicon-arrow_upward"></i></a>
@@ -79,4 +75,3 @@
         <span id="mnmd-search-remove"><i class="mdicon mdicon-close"></i></span>
     </form>
 </div>
-@endsection

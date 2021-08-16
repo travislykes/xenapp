@@ -5,7 +5,7 @@ namespace App\Helper;
 
 use Jenssegers\Blade\Blade;
 
-class Views
+class View
 {
     /**
      * Path for views

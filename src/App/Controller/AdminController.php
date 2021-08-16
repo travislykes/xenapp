@@ -2,13 +2,13 @@
 
 namespace App\Controller;
 
-use App\Helper\Views;
+use App\Helper\View;
 
 class AdminController
 {
     public function index()
     {
-        $blade = Views::GetView();
+        $blade = View::GetView();
 
         return $blade->make('homepage', ['name' => 'Admin in this Biatch'])->render();
 
