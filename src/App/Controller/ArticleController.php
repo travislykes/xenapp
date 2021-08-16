@@ -31,11 +31,12 @@ class ArticleController
         $title = $this->test_input($_POST['title']);
         $body = $_POST['body'];
         $slug = $article->getSlug($title);
-        $image = $article->processImage($_POST['image']);
+        $image = $article->processImage($_FILES['image']);
 
-        $article->saveArticle($title, $body, $slug, $image);
+        $user_id  = $_SESSION['id'];
+        $article->saveArticle($title, $body, $slug, $image, $user_id);
 
-//        return
+        return header('Location: /');
 
     }
 

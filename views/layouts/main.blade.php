@@ -28,13 +28,6 @@
     <link href="css/color.css" rel="stylesheet">
     <link href="css/font.css" rel="stylesheet">
 
-    <link href="css/module/mnmd-feauture-slider.css" rel="stylesheet">
-    <link href="css/module/mnmd-post--grid-a.css" rel="stylesheet">
-    <link href="css/module/mnmd-post--grid-b.css" rel="stylesheet">
-    <link href="css/module/mnmd-post--grid-c.css" rel="stylesheet">
-    <link href="css/module/mnmd-post--grid-c-snip.css" rel="stylesheet">
-    <link href="css/module/mnmd-post--grid-d.css" rel="stylesheet">
-    <link href="css/module/mnmd-post--grid-f.css" rel="stylesheet">
 
     <!--    latest-a-->
     <link href="css/module/mnmd-post--listing-list-small.css" rel="stylesheet">
@@ -60,11 +53,6 @@
     </div>
     @include('layouts.footer')
 </div><!-- .site-wrapper -->
-
-
-
-<!-- Login modal -->
-@include('layouts.login-modal')
 
 
 

@@ -14,7 +14,7 @@
                            echo '<p>' . implode('</p><p>', $errors) . '</p>';
                     }
                 @endphp
-                <form action="/register" method="post">
+                <form action="/article-save" method="post" enctype="multipart/form-data">
                     <label for="name">Title:</label>
                     <input type="text" id="name" name="title" required><br><br>
                     <label for="body">Body:</label>

@@ -28,6 +28,11 @@ Route::add('/register', function() {
     return $route->register();
 }, 'post');
 
+Route::add('/logout', function (){
+    $route = new AuthController();
+    return $route->logout();
+});
+
 
 //Article Routes
 Route::add('/article-create', function (){
@@ -49,6 +54,7 @@ Route::add('/show', function (){
     $route = new ArticleController();
     return $route->show();
 });
+
 
 Route::add('/admin', function (){
     $route = new AdminController();

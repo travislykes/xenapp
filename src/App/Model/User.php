@@ -40,7 +40,7 @@ class User
     public function login($email, $password)
     {
 
-        $query = $this->db->prepare("SELECT `password`, `user_id` FROM `users` WHERE `email` = ?");
+        $query = $this->db->prepare("SELECT `password`, `id` FROM `users` WHERE `email` = ?");
         $query->bindValue(1, $email);
 
         try {
@@ -48,7 +48,7 @@ class User
             $query->execute();
             $data = $query->fetch();
             $stored_password = $data['password'];
-            $login['id'] = $data['user_id'];
+            $login['id'] = $data['id'];
 
 //        password hashing
             $salt1 = '&!@(#+';

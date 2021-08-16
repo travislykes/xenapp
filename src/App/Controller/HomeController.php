@@ -13,7 +13,6 @@ class HomeController
 
         $article = new Article($conn);
         $articles = $article->getAll();
-        var_dump($articles);
 
         return $view->make('homepage', ['name' => 'Article show', 'articles'=> $articles])->render();
     }

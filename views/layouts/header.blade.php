@@ -40,20 +40,18 @@
                         <li class="menu-item">
                             <a href="/">Home</a>
                         </li>
-                        <li class="menu-item">
-                            <a href="#">Articles</a>
-                        </li> <li class="menu-item">
-                            <a href="#">Contact</a>
-                        </li>
+                        @if(empty($_SESSION['id']))
                         <li class="menu-item">
                             <a href="login">Login</a>
                         </li>
+                        @else
                         </li> <li class="menu-item">
                             <a href="#">Create Article</a>
                         </li>
                         </li> <li class="menu-item">
-                            <a href="#">Logout</a>
+                            <a href="/logout">Logout</a>
                         </li>
+                        @endif
                     </ul>
                 </div>
             </div><!-- .navigation-bar__inner -->

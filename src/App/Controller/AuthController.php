@@ -36,15 +36,18 @@ class AuthController
                     $errors[] = 'Sorry, that username/password is invalid';
                 }else {
                     $_SESSION['id'] =  $login['id'];
-                    $_SESSION['firstname'] =  $login['firstname'];
-
                 }
             }
 
         }
         $view = View::GetView();
-//        if there is an error
-        return $view->make('auth.login', ['errors' => $errors])->render();
+
+        if ($errors){
+            return $view->make('auth.login', ['errors' => $errors])->render();
+        }
+        else {
+            return header('Location: /');
+        }
 //        login to admin
     }
 
@@ -68,6 +71,14 @@ class AuthController
         else{
 //            script create user
         }
-        return header('Location: /');;
+        return header('Location: /');
+    }
+
+    public function logout()
+    {
+        session_start();
+        unset($_SESSION['id']);
+
+        return header('Location: /');
     }
 }
