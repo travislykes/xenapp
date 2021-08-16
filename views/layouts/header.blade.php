@@ -48,34 +48,16 @@
                         <li class="menu-item">
                             <a href="login">Login</a>
                         </li>
-
+                        </li> <li class="menu-item">
+                            <a href="#">Create Article</a>
+                        </li>
+                        </li> <li class="menu-item">
+                            <a href="#">Logout</a>
+                        </li>
                     </ul>
-                </div>
-
-                <div class="navigation-bar__section">
-                    <button type="submit" class="navigation-bar-btn js-search-dropdown-toggle">
-                        <i class="mdicon mdicon-search"></i>
-                    </button>
                 </div>
             </div><!-- .navigation-bar__inner -->
 
-            <div id="header-search-dropdown" class="header-search-dropdown ajax-search is-in-navbar js-ajax-search">
-                <div class="container container--narrow">
-                    <form class="search-form search-form--horizontal" method="get" action="#">
-                        <div class="search-form__input-wrap">
-                            <input type="text" name="s" class="search-form__input" placeholder="Search" value="">
-                        </div>
-                        <div class="search-form__submit-wrap">
-                            <button type="submit" class="search-form__submit btn btn-primary">Search</button>
-                        </div>
-                    </form>
-                    <div class="search-results">
-                        <div class="typing-loader"></div>
-                        <div class="search-results__inner"></div>
-                    </div>
-                </div>
-            </div>
-            <!-- .header-search-dropdown -->
         </div><!-- .container -->
     </nav><!-- Navigation-bar -->
 </header>

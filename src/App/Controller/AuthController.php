@@ -58,14 +58,16 @@ class AuthController
     {
         global $conn;
         $users = new User($conn);
-        if(isset($_POST['email'],$_POST['password'],$_POST['firstname']))
+        if(isset($_POST['email'],$_POST['password'],$_POST['name']))
         {
             $email = trim($_POST['email']);
             $password = $_POST['password'];
             $name = $_POST['name'];
             $users->register($name, $email, $password);
         }
-
+        else{
+//            script create user
+        }
         return header('Location: /');;
     }
 }

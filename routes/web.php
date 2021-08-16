@@ -29,7 +29,17 @@ Route::add('/register', function() {
 }, 'post');
 
 
-//Articles
+//Article Routes
+Route::add('/article-create', function (){
+    $route = new ArticleController();
+    return $route->create();
+});
+
+Route::add('/article-save', function() {
+    $route = new ArticleController();
+    return $route->store();
+}, 'post');
+
 Route::add('/', function() {
     $route = new HomeController();
     return $route->index();
@@ -44,6 +54,9 @@ Route::add('/admin', function (){
     $route = new AdminController();
     return $route->index();
 });
+
+
+
 
 // Run the router
 Route::run('/');

@@ -95,7 +95,7 @@ class User
         $password = $salt1 . $password . $salt2;
         $password = sha1($password);
         $created_at = date("Y-m-d H:i:s");
-
+//       TODO check if user exists
         $query = $this->db->prepare("INSERT INTO `users` (`firstname`, `password`, `email`, `created_at`) VALUES (?, ?, ?, ?) ");
 
         $query->bindValue(1, $name);
