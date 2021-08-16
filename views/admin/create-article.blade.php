@@ -29,3 +29,9 @@
         </div>
     </div>
 @endsection
+
+@section('scripts')
+    <script>
+        CKEDITOR.replace( 'body' );
+    </script>
+@endsection

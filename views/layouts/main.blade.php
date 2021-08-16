@@ -65,8 +65,6 @@
 <script src="js/scripts.js"></script>
 
 <!-- Theme Custom Scripts -->
-<script>
-    CKEDITOR.replace( 'body' );
-</script>
+@yield('scripts')
 </body>
 </html>

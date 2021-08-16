@@ -1,5 +1,4 @@
 <?php $__env->startSection('content'); ?>
-    <!-- Module 3 -->
     <div class="mnmd-block  mnmd-block--fullwidth mnmd-post--grid-b">
         <div class="container">
             <div class="block-heading">
@@ -11,7 +10,7 @@
                         <div class="list-item col-md-4">
                             <article class="post post--vertical post--vertical-3i-large post__thumb-480">
                                 <div class="post__thumb atbs-thumb-object-fit">
-                                    <a href="#">
+                                    <a href="/<?php echo e($article['slug']); ?>">
                                         <?php if(empty($article['images'])): ?>
                                         <img src="http://via.placeholder.com/450x400" alt="File not found">
                                         <?php else: ?>
@@ -21,7 +20,7 @@
                                 </div>
                                 <div class="post__text">
                                     <a href="#" class="post__cat">Category</a>
-                                    <h3 class="post__title typescale-2_5"><a href="/article/<?php echo e($article['slug']); ?>"><?php echo e($article['title']); ?></a></h3>
+                                    <h3 class="post__title typescale-2_5"><a href="/<?php echo e($article['slug']); ?>"><?php echo e($article['title']); ?></a></h3>
                                     <div class="post__excerpt"><?php echo substr($article['body'], 0, 50); ?>..
                                     </div>
                                     <?php if(!empty($_SESSION['id']) && $article['user_id'] == $_SESSION['id']): ?>

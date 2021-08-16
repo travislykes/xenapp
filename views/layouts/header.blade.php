@@ -46,7 +46,7 @@
                         </li>
                         @else
                         </li> <li class="menu-item">
-                            <a href="#">Create Article</a>
+                            <a href="/create-article">Create Article</a>
                         </li>
                         </li> <li class="menu-item">
                             <a href="/logout">Logout</a>

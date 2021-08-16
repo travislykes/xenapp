@@ -33,9 +33,7 @@ Route::add('/logout', function (){
     return $route->logout();
 });
 
-
-//Article Routes
-Route::add('/article-create', function (){
+Route::add('/create-article', function (){
     $route = new ArticleController();
     return $route->create();
 });
@@ -50,10 +48,15 @@ Route::add('/', function() {
     return $route->index();
 });
 
-Route::add('/show', function (){
+//Article Routes
+Route::add('/([a-z-0-9-]*)', function ($slug){
     $route = new ArticleController();
-    return $route->show();
+    return $route->show($slug);
 });
+
+
+
+
 
 
 Route::add('/admin', function (){

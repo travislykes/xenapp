@@ -7,14 +7,14 @@ use App\Model\Article;
 
 class ArticleController
 {
-    public function show($slug = null)
+    public function show($slug)
     {
+        global $conn;
         $view = View::GetView();
-        $conn = 'database';
         $article = new Article($conn);
         $details = $article->getArticle($slug);
-
-        return $view->make('article', ['article' => 'Article show', 'slug' => $slug])->render();
+//var_dump($details);
+        return $view->make('article', ['details' => $details])->render();
     }
 
     public function create()

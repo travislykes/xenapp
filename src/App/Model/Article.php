@@ -14,15 +14,14 @@ class Article
 
     public function getArticle($slug)
     {
-
-        $query = $this->db->prepare("SELECT * FROM `articles` WHERE `slug`= ?");
+        $query = $this->db->prepare("SELECT id FROM `articles` WHERE `slug`= ?");
         $query->bindValue(1, $slug);
 
         try {
 
             $query->execute();
 
-            return $query->fetch();
+            return $query->fetchColumn();
 
         } catch (PDOException $e) {
 
